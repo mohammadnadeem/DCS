@@ -160,11 +160,11 @@
             // lblAllowance
             // 
             this.lblAllowance.AutoSize = true;
-            this.lblAllowance.Location = new System.Drawing.Point(146, 47);
+            this.lblAllowance.Location = new System.Drawing.Point(131, 47);
             this.lblAllowance.Name = "lblAllowance";
-            this.lblAllowance.Size = new System.Drawing.Size(56, 13);
+            this.lblAllowance.Size = new System.Drawing.Size(93, 13);
             this.lblAllowance.TabIndex = 3;
-            this.lblAllowance.Text = "Allowance";
+            this.lblAllowance.Text = "Weight Allowance";
             // 
             // lblIsCheckInStatus
             // 

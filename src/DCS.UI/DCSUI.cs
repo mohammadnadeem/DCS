@@ -50,6 +50,8 @@ namespace DCS.UI
                     currentFindPassengerResult = BoardingPassParsor.ParseBoardingString(txtBoardingPassString.Text);
                     if (currentFindPassengerResult.IsSuccess)
                         UpdatePNROnUI(currentFindPassengerResult);
+                    else
+                        MessageBox.Show(currentFindPassengerResult.Error, "Parsing Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     currentFindPassengerResult.IsSuccess = false; // set success to false to make sure checkin is not allowed
                 }
             }
@@ -77,7 +79,8 @@ namespace DCS.UI
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            if(!currentFindPassengerResult.IsSuccess)
+            #region Checkin Validations
+            if (!currentFindPassengerResult.IsSuccess)
             {
                 MessageBox.Show("There were errors during scanning boarding pass, try scanning boarding pass again first.", "Checkin Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -90,7 +93,8 @@ namespace DCS.UI
                 MessageBox.Show("Passenger already checked in.", "Checkin Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+            #endregion
+
             CheckInManager cm = new CheckInManager();
             var checkInResult = cm.CheckIn(currentFindPassengerResult.PassengerNameRecord.Id, Convert.ToDecimal(txtAllowance.Text));
 
