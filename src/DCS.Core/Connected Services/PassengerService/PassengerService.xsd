@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="Sita.Bagdrop.Assignment.Dcs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Sita.Bagdrop.Assignment.Dcs" />
+  <xs:element name="FindPassenger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Sita.Bagdrop.Assignment.Dcs" minOccurs="0" name="request" nillable="true" type="q1:FindPassengerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="FindPassengerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoardingPassString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q2="Sita.Bagdrop.Assignment.Dcs" name="FindPassengerRequest" nillable="true" type="q2:FindPassengerRequest" />
+  <xs:element name="FindPassengerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="Sita.Bagdrop.Assignment.Dcs" minOccurs="0" name="FindPassengerResult" nillable="true" type="q3:FindPassengerResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="FindPassengerResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="Sita.Bagdrop.Assignment.Dcs" base="q4:Result">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PassengerNameRecord" nillable="true" type="q4:PassengerNameRecord" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q5="Sita.Bagdrop.Assignment.Dcs" name="FindPassengerResult" nillable="true" type="q5:FindPassengerResult" />
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q6="Sita.Bagdrop.Assignment.Dcs" name="Result" nillable="true" type="q6:Result" />
+  <xs:complexType name="PassengerNameRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Allowance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CheckedIn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="Sita.Bagdrop.Assignment.Dcs" minOccurs="0" name="Flights" nillable="true" type="q7:ArrayOfFlight" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TravelClass" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q8="Sita.Bagdrop.Assignment.Dcs" name="PassengerNameRecord" nillable="true" type="q8:PassengerNameRecord" />
+  <xs:complexType name="ArrayOfFlight">
+    <xs:sequence>
+      <xs:element xmlns:q9="Sita.Bagdrop.Assignment.Dcs" minOccurs="0" maxOccurs="unbounded" name="Flight" nillable="true" type="q9:Flight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q10="Sita.Bagdrop.Assignment.Dcs" name="ArrayOfFlight" nillable="true" type="q10:ArrayOfFlight" />
+  <xs:complexType name="Flight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Sita.Bagdrop.Assignment.Dcs" minOccurs="0" name="FlightStatus" type="q11:FlightStatus" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q12="Sita.Bagdrop.Assignment.Dcs" name="Flight" nillable="true" type="q12:Flight" />
+  <xs:element name="CheckIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="passengerId" type="ser:guid" />
+        <xs:element minOccurs="0" name="weight" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="Sita.Bagdrop.Assignment.Dcs" minOccurs="0" name="CheckInResult" nillable="true" type="q13:CheckInResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CheckInResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="Sita.Bagdrop.Assignment.Dcs" base="q14:Result">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q15="Sita.Bagdrop.Assignment.Dcs" name="CheckInResult" nillable="true" type="q15:CheckInResult" />
+</xs:schema>

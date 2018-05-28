@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f45ee9c6-0274-429f-9dce-12827d6dde01" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PassengerService.xsd" MetadataType="Schema" ID="8e00e399-4abb-4b25-8826-7b6c3c9372b0" SourceId="1" SourceUrl="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PassengerService.wsdl" MetadataType="Wsdl" ID="afda1fc3-297a-4e19-a196-ef4ff617d769" SourceId="1" SourceUrl="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PassengerService.disco" MetadataType="Disco" ID="05eace89-04a0-4ef5-ae78-604282490ab1" SourceId="1" SourceUrl="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?disco" />
+    <MetadataFile FileName="PassengerService1.xsd" MetadataType="Schema" ID="a4f2cbf1-eb57-4eab-83e6-179d7e67226f" SourceId="1" SourceUrl="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DataService.wsdl" MetadataType="Wsdl" ID="5bbac04d-398a-4051-9e46-46995ecfbdbe" SourceId="1" SourceUrl="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?wsdl" />
+    <MetadataFile FileName="PassengerService2.xsd" MetadataType="Schema" ID="8fa012b3-3c87-4113-9970-bf61a37d7f99" SourceId="1" SourceUrl="http://sitabagdropassignmentdcs.azurewebsites.net/PassengerService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
